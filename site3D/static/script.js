@@ -7,7 +7,7 @@ import { GLTFLoader } from '/static/node_modules/three/examples/jsm/loaders/GLTF
 var scene = new THREE.Scene();
 
  // Load Camera Perspektive
-var camera = new THREE.PerspectiveCamera( 50,2, 1, 20000 );
+var camera = new THREE.PerspectiveCamera( 50,window.innerWidth / window.innerHeight, 1, 20000 );
 camera.position.set( 10281, 195, -1250 );
 
  // Load a Renderer
