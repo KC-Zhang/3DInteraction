@@ -1,7 +1,6 @@
 
 import * as THREE from "/static/node_modules/three/src/Three.js";
 import { OrbitControls } from '/static/node_modules/three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from '/static/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 // Load 3D Scene
 var scene = new THREE.Scene();
@@ -39,26 +38,6 @@ scene.add( obj );
 
 } );
 
-{
-    const planeSize = 1;
-
-    const loader = new THREE.TextureLoader();
-    const texture = loader.load('https://threejsfundamentals.org/threejs/resources/images/checker.png');
-    texture.wrapS = THREE.RepeatWrapping;
-    texture.wrapT = THREE.RepeatWrapping;
-    texture.magFilter = THREE.NearestFilter;
-    const repeats = planeSize / 2;
-    texture.repeat.set(repeats, repeats);
-
-    const planeGeo = new THREE.PlaneBufferGeometry(planeSize, planeSize);
-    const planeMat = new THREE.MeshPhongMaterial({
-      map: texture,
-      side: THREE.DoubleSide,
-    });
-    const mesh = new THREE.Mesh(planeGeo, planeMat);
-    mesh.rotation.x = Math.PI * -.5;
-    scene.add(mesh);
-}
 
 function animate() {
     render();
